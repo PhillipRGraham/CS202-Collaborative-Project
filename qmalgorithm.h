@@ -17,11 +17,10 @@ class truthTable ()
 		string userExpression;
 			//	This contains the user readable boolean expression provided.
 		tree <char> convertedExpression;
-			//	This contains a sequential expression intended to be read
-			//	from beginning to end. Essentially, it is the same as the
-			//	user expression, but it is inteded to be read from beggining
-			//	to end.
-		void expressionConvertor;
+			//	Contains what is essential the order of operation, in sequance of execution.
+			//	Each node of the tree is either 1, 0, +, *, or '.
+			//	These represent true, false, OR, AND, as well as NOT. With these we have a boolean complete expression.
+		void expressionConvertor ();
 		void initializeArrays ();
 			//	Essentially 
 		int * inputArr;
@@ -39,8 +38,11 @@ class qmAlgorithm ()
 	public:
 		
 	private:
-};
-
-class boolExpression ()
-{
+		truthTable * truthTableArr;
+			//	This array just contains all of our described truth tables.
+			//	Using these inputs and outputs, we will be able to determine a minimum sup of products
+			//	using the Quine McClusky algorithm
+		string * msopArr;
+		void addMsop (string);
+		void printMsopArr();
 };
